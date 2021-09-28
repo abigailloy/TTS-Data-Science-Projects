@@ -18,11 +18,11 @@ questionII <- meta[c(5,7,9,10), c(3)]
 print(questionII)
 
 #returns all data for samples receiving treatment P
-questionIII <- subset(meta, treatment == 'P', select = c(sex, stage, treatment, myc))
+questionIII <- subset(meta, treatment == 'P')
 print(questionIII)
 
 #returns only stage and treatment columns for samples w/ myc > 5000
-questionIV <- filter(meta, myc > 5000)
+questionIV <- subset(meta, myc > 5000, select = c(stage, treatment))
 print(questionIV)
 
 #removes treatment column
